@@ -1,0 +1,150 @@
+/**
+ * ASCE Ticket Matrix - Visual Progress Stepper
+ * 
+ * Simple progress indicator showing: Tickets → Cart → Checkout
+ * v3.0+ architecture: Plugin handles ticket selection, EM Pro handles cart/checkout
+ * 
+ * @version 3.0.8
+ */
+
+/* Stepper container */
+.asce-tm-stepper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 30px 0;
+    padding: 25px 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Visible modifier class */
+.asce-tm-stepper.asce-tm-stepper--visible {
+    display: flex;
+}
+
+/* Hidden modifier class */
+.asce-tm-stepper.asce-tm-stepper--hidden {
+    display: none !important;
+}
+
+/* Individual step */
+.asce-tm-step {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    padding: 0;
+    color: rgba(255,255,255,0.6);
+    transition: all 0.3s ease;
+}
+
+/* Step number circle */
+.asce-tm-step-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.2);
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    font-size: 16px;
+    font-weight: bold;
+    color: rgba(255,255,255,0.7);
+    transition: all 0.3s ease;
+    z-index: 2;
+    position: relative;
+}
+
+/* Step label */
+.asce-tm-step-label {
+    margin-left: 12px;
+    font-size: 15px;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+/* Step connector line */
+.asce-tm-step-connector {
+    width: 60px;
+    height: 2px;
+    background: rgba(255,255,255,0.2);
+    margin: 0 20px;
+    transition: all 0.3s ease;
+}
+
+/* Active step */
+.asce-tm-step.active {
+    color: #fff;
+}
+
+.asce-tm-step.active .asce-tm-step-number {
+    background: #fff;
+    border-color: #fff;
+    color: #667eea;
+    box-shadow: 0 0 0 4px rgba(255,255,255,0.3);
+}
+
+.asce-tm-step.active .asce-tm-step-label {
+    color: #fff;
+    font-weight: 600;
+}
+
+/* Completed step */
+.asce-tm-step.completed {
+    color: rgba(255,255,255,0.9);
+}
+
+.asce-tm-step.completed .asce-tm-step-number {
+    background: rgba(76, 175, 80, 0.9);
+    border-color: rgba(76, 175, 80, 1);
+    color: #fff;
+}
+
+.asce-tm-step.completed .asce-tm-step-number::after {
+    content: '✓';
+    position: absolute;
+    font-size: 20px;
+}
+
+.asce-tm-step.completed .asce-tm-step-connector {
+    background: rgba(76, 175, 80, 0.6);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .asce-tm-stepper {
+        padding: 20px 15px;
+    }
+    
+    .asce-tm-step-label {
+        font-size: 13px;
+        margin-left: 8px;
+    }
+    
+    .asce-tm-step-number {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+    
+    .asce-tm-step-connector {
+        width: 40px;
+        margin: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .asce-tm-step-label {
+        display: none;
+    }
+    
+    .asce-tm-step-connector {
+        width: 30px;
+        margin: 0 8px;
+    }
+}

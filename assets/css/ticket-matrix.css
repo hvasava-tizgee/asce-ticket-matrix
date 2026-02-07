@@ -1,0 +1,913 @@
+/**
+ * ASCE Ticket Matrix Styles
+ */
+
+/* Notice/Message styles */
+.asce-tm-notice {
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    background: #e7f3ff;
+    border-left: 4px solid #2271b1;
+    color: #1d2327;
+}
+
+.asce-tm-notice.asce-tm-error {
+    background: #fcf0f1;
+    border-left-color: #d63638;
+    color: #50575e;
+}
+
+.asce-tm-notice.asce-tm-warning {
+    background: #fff8e5;
+    border-left-color: #dba617;
+    color: #50575e;
+}
+
+/* Panel Management */
+.asce-tm-panel {
+    display: none;
+}
+
+.asce-tm-panel.active {
+    display: block;
+}
+
+.asce-tm-panel-forms {
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+}
+
+.asce-tm-forms-panel {
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+}
+
+.asce-tm-form-group-wrapper {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+}
+
+.asce-tm-form-group-wrapper h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #8a1f2b;
+    color: #8a1f2b;
+}
+
+.asce-tm-form-events {
+    margin: -10px 0 20px 0;
+    padding: 10px 15px;
+    background: #fff;
+    border-left: 3px solid #8a1f2b;
+    font-size: 14px;
+    color: #555;
+}
+
+.asce-tm-form-events strong {
+    color: #8a1f2b;
+}
+
+.asce-tm-booking-fields,
+.asce-tm-attendee-fields {
+    border: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.asce-tm-booking-fields legend,
+.asce-tm-attendee-fields legend {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 15px;
+    padding: 0;
+}
+
+.asce-tm-form-field {
+    margin-bottom: 20px;
+}
+
+.asce-tm-form-field.asce-tm-field-error {
+    padding: 15px;
+    background: #ffebee;
+    border: 2px solid #d63638;
+    border-radius: 4px;
+}
+
+.asce-tm-form-field.asce-tm-field-error label {
+    color: #d63638;
+}
+
+.asce-tm-form-field label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1d2327;
+}
+
+.asce-tm-form-field .required {
+    color: #d63638;
+}
+
+.asce-tm-form-field input[type="text"],
+.asce-tm-form-field input[type="email"],
+.asce-tm-form-field input[type="tel"],
+.asce-tm-form-field textarea,
+.asce-tm-form-field select {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #8c8f94;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.asce-tm-form-field textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.asce-tm-form-field input[required]:invalid,
+.asce-tm-form-field textarea[required]:invalid,
+.asce-tm-form-field select[required]:invalid {
+    border-color: #d63638;
+}
+
+.asce-tm-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.asce-tm-options label {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    margin: 0;
+}
+
+.asce-tm-options input[type="radio"],
+.asce-tm-options input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.asce-tm-form-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid #e0e0e0;
+}
+
+.asce-tm-form-actions .button {
+    padding: 10px 24px;
+    font-size: 16px;
+}
+
+/* Container */
+.asce-ticket-matrix-container {
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+/* Two Separate Tables Layout */
+.asce-tm-tables-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.asce-tm-table-section {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.asce-tm-table-title {
+    margin: 0;
+    padding: 20px;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.asce-tm-earlybird-title {
+    background: linear-gradient(135deg, #2d5016 0%, #3d6b1f 100%);
+    color: #fff;
+}
+
+.asce-tm-regular-title {
+    background: linear-gradient(135deg, #555 0%, #777 100%);
+    color: #fff;
+}
+
+.asce-tm-savings-badge {
+    background: #ffd700;
+    color: #2d5016;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.asce-tm-earlybird-section .asce-tm-matrix-table thead {
+    background: #3d6b1f;
+    color: #fff;
+}
+
+.asce-tm-regular-section .asce-tm-matrix-table thead {
+    background: #666;
+    color: #fff;
+}
+
+.asce-tm-earlybird-section .asce-tm-price {
+    color: #2d5016;
+}
+
+.asce-tm-regular-section .asce-tm-price {
+    color: #666;
+}
+
+
+/* Pricing Toggle */
+.asce-tm-pricing-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    padding: 15px;
+    background: #f7f7f7;
+    border-radius: 8px;
+}
+
+.asce-tm-toggle-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px 20px;
+    background: #fff;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.asce-tm-toggle-label:hover {
+    border-color: #8a1f2b;
+}
+
+.asce-tm-toggle-label input[type="radio"] {
+    margin-right: 8px;
+}
+
+.asce-tm-toggle-label input[type="radio"]:checked + span {
+    font-weight: bold;
+    color: #8a1f2b;
+}
+
+.asce-tm-toggle-label:has(input:checked) {
+    background: #8a1f2b;
+    border-color: #8a1f2b;
+    color: #fff;
+}
+
+.asce-tm-toggle-label:has(input:checked) span {
+    color: #fff;
+}
+
+/* Matrix Table */
+.asce-tm-matrix-wrapper {
+    overflow-x: auto;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.asce-tm-matrix-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+.asce-tm-matrix-table thead {
+    background: #8a1f2b;
+    color: #fff;
+}
+
+.asce-tm-matrix-table th {
+    padding: 15px 10px;
+    text-align: center;
+    font-weight: 600;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.asce-tm-header-corner {
+    background: #6d1823;
+}
+
+.asce-tm-event-name {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.asce-tm-event-date {
+    font-size: 12px;
+    opacity: 0.9;
+    font-weight: normal;
+}
+
+.asce-tm-matrix-table tbody tr {
+    border-bottom: 1px solid #e0e0e0;
+    transition: background-color 0.2s ease;
+}
+
+.asce-tm-matrix-table tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+.asce-tm-matrix-table td {
+    padding: 15px 10px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+}
+
+.asce-tm-cell-label {
+    text-align: left;
+    font-weight: 600;
+    background: #f7f7f7;
+}
+
+/* Ticket Options */
+.asce-tm-ticket-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.asce-tm-price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #8a1f2b;
+}
+
+.asce-tm-quantity {
+    width: 100%;
+}
+
+.asce-tm-qty-input {
+    width: 70px;
+    padding: 8px;
+    text-align: center;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.asce-tm-qty-input:focus {
+    outline: none;
+    border-color: #8a1f2b;
+}
+
+.asce-tm-qty-input:disabled {
+    background: #f0f0f0;
+    cursor: not-allowed;
+}
+
+.asce-tm-availability {
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 3px;
+}
+
+.asce-tm-low-stock {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.asce-tm-sold-out {
+    background: #f8d7da;
+    color: #721c24;
+    font-weight: bold;
+}
+
+.asce-tm-not-available {
+    opacity: 0.5;
+}
+
+.asce-tm-na {
+    color: #999;
+    font-style: italic;
+}
+
+/* Both Pricing Mode */
+.asce-tm-both-pricing {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.asce-tm-both-pricing .asce-tm-ticket-option {
+    flex: 1;
+    min-width: 100px;
+}
+
+.asce-tm-tier-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 4px;
+}
+
+/* Summary Section */
+.asce-tm-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #f7f7f7;
+    border-radius: 8px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.asce-tm-summary-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.asce-tm-total {
+    font-size: 18px;
+}
+
+.asce-tm-total-label {
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+.asce-tm-total-amount {
+    font-size: 24px;
+    font-weight: bold;
+    color: #8a1f2b;
+}
+
+.asce-tm-item-count {
+    color: #666;
+}
+
+.asce-tm-items-selected {
+    font-weight: bold;
+    color: #8a1f2b;
+}
+
+/* Buttons */
+.asce-tm-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.asce-tm-btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.asce-tm-btn-primary {
+    background: #8a1f2b;
+    color: #fff;
+}
+
+.asce-tm-btn-primary:hover:not(:disabled) {
+    background: #6d1823;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(138, 31, 43, 0.3);
+}
+
+.asce-tm-btn-primary:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.asce-tm-btn-secondary {
+    background: #fff;
+    color: #333;
+    border: 2px solid #ddd;
+}
+
+.asce-tm-btn-secondary:hover {
+    border-color: #999;
+    background: #f7f7f7;
+}
+
+/* Loading Overlay */
+.asce-tm-loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    border-radius: 8px;
+}
+
+.asce-tm-spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #8a1f2b;
+    border-radius: 50%;
+    animation: asce-tm-spin 1s linear infinite;
+}
+
+@keyframes asce-tm-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.asce-tm-loading-text {
+    margin-top: 15px;
+    font-size: 16px;
+    color: #666;
+}
+
+/* Notices */
+.asce-tm-notice {
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 6px;
+    background: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+}
+
+.asce-tm-notice.asce-tm-error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .asce-tm-tables-wrapper {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .asce-tm-matrix-table {
+        font-size: 12px;
+    }
+    
+    .asce-tm-matrix-table th,
+    .asce-tm-matrix-table td {
+        padding: 8px 5px;
+    }
+    
+    .asce-tm-event-name {
+        font-size: 12px;
+    }
+    
+    .asce-tm-event-date {
+        font-size: 10px;
+    }
+    
+    .asce-tm-qty-input {
+        width: 50px;
+        padding: 6px;
+    }
+    
+    .asce-tm-price {
+        font-size: 14px;
+    }
+    
+    .asce-tm-summary {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .asce-tm-summary-content {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+    
+    .asce-tm-actions {
+        width: 100%;
+    }
+    
+    .asce-tm-btn {
+        flex: 1;
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+    
+    .asce-tm-table-title {
+        font-size: 16px;
+        padding: 15px;
+    }
+    
+    .asce-tm-savings-badge {
+        font-size: 10px;
+        padding: 3px 8px;
+    }
+}
+
+/* Expired Ticket Styling (Individual Tickets) */
+.asce-tm-ticket-expired {
+    position: relative;
+    opacity: 0.6;
+}
+
+.asce-tm-ticket-expired .asce-tm-price {
+    text-decoration: line-through;
+    color: #999 !important;
+}
+
+.asce-tm-ticket-expired .asce-tm-availability.asce-tm-expired {
+    background: #dc3545;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+
+.asce-tm-ticket-expired::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.4);
+    pointer-events: none;
+    border-radius: 4px;
+}
+
+/* View-Only Mode (Entire Table - Legacy Support) */
+.asce-tm-view-only {
+    position: relative;
+    opacity: 0.7;
+}
+
+.asce-tm-view-only::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.3);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.asce-tm-expired-notice {
+    background: #fff3cd;
+    border: 2px solid #ffc107;
+    border-radius: 6px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.asce-tm-expired-notice strong {
+    display: block;
+    color: #856404;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.asce-tm-expired-notice p {
+    margin: 0;
+    color: #856404;
+    font-size: 14px;
+}
+
+.asce-tm-view-only .asce-tm-qty-input {
+    background-color: #e9ecef !important;
+    cursor: not-allowed !important;
+    opacity: 0.6;
+}
+
+.asce-tm-view-only .asce-tm-qty-input:disabled {
+    border-color: #ced4da;
+}
+
+.asce-tm-view-only .asce-tm-ticket-option {
+    position: relative;
+}
+
+.asce-tm-view-only .asce-tm-price {
+    opacity: 0.7;
+}
+
+/* Hide savings badge in view-only mode */
+.asce-tm-view-only .asce-tm-savings-badge {
+    display: none;
+}
+/* Admin UI Styles */
+.asce-tm-tables-list {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ccd0d4;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+}
+
+.asce-tm-table-editor {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ccd0d4;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+}
+
+.asce-tm-column-config {
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.asce-tm-event-select,
+.asce-tm-ticket-select {
+    max-width: 100%;
+}
+
+.asce-tm-delete-table {
+    color: #b32d2e !important;
+}
+
+.asce-tm-delete-table:hover {
+    color: #dc3232 !important;
+}
+
+/* Matrix Configuration Table */
+.asce-tm-matrix-config {
+    border-collapse: collapse;
+}
+
+.asce-tm-matrix-config thead th {
+    background: #f0f0f1;
+    font-weight: 600;
+    padding: 12px 10px;
+    text-align: left;
+    border-bottom: 2px solid #c3c4c7;
+    position: sticky;
+    top: 32px;
+    z-index: 10;
+}
+
+.asce-tm-matrix-config tbody td {
+    padding: 12px 10px;
+    vertical-align: middle;
+    border-bottom: 1px solid #dcdcde;
+}
+
+.asce-tm-matrix-config tbody tr:hover {
+    background: #f6f7f7;
+}
+
+.asce-tm-matrix-config select {
+    font-size: 13px;
+    padding: 4px 8px;
+}
+
+.asce-tm-matrix-config input[type="text"] {
+    font-size: 13px;
+    padding: 4px 8px;
+}
+
+/* Simplified Matrix Table */
+.asce-tm-cell-event {
+    background: #f8f9fa;
+    font-weight: 500;
+}
+
+.asce-tm-event-name {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.asce-tm-event-date {
+    font-size: 13px;
+    color: #666;
+}
+
+.asce-tm-cell-ticket {
+    text-align: center;
+    vertical-align: middle;
+    padding: 15px 10px;
+}
+
+.asce-tm-ticket-option {
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+}
+
+.asce-tm-qty-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.asce-tm-checkbox-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.asce-tm-qty-checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transform: scale(1.5);
+    margin: 10px 0;
+}
+
+.asce-tm-status {
+    margin-top: 10px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.asce-tm-expired {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.asce-tm-unavailable .asce-tm-qty-input {
+    display: none;
+}
+
+/* Admin: Event & Ticket Selection Matrix Wrapper */
+.asce-tm-matrix-config-wrap {
+    overflow-x: auto;
+    overflow-y: auto;
+    max-height: calc(100vh - 260px);
+    position: relative;
+}
+
+/* Admin: Sticky Table Headers */
+.asce-tm-matrix-config-wrap .asce-tm-matrix-config thead th {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: #f0f0f1;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.1);
+}
